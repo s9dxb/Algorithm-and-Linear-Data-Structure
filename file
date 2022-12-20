@@ -1,0 +1,45 @@
+ALGORITHM SENTENCE
+
+VAR 
+
+numberOfVowels,numberOfWords,numberOfCharacters:= INTEGER;
+
+sentence:=STRING[];
+
+BEGIN
+
+	numberOfVowels:=0;
+
+	numberOfWords:=1;
+
+	numberOfCharacters:=0;
+
+	write("Enter a sentence")
+
+	read(sentence)
+
+	REPEAT
+
+		IF (sentence[numberOfCharacters]=" ") THEN
+
+			numberOfWords:=numberOfWords+1 ;
+
+		END_IF
+
+		IF (sentence[numberOfCharacters] in ["a","e","u","i","o","y"]) THEN
+
+		numberOfVowels:= numberOfVowels+1 ;
+	 
+		END_IF
+
+		numberOfCharacters := numberOfCharacters+1 ;
+
+	UNTIL (sentence[numberOfCharacters]=".")
+
+	write( "Number of characters is ",numberOfCharacters+1 )
+
+	write ("Number of words is ",numberOfWords)
+
+	write ("Number of vowels is ",numberOfVowels)
+
+END
