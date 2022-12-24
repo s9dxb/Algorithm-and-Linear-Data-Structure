@@ -1,0 +1,25 @@
+function distinct(set1, set2, distinctArr) {
+  for (var i = 0; i < set1.length; i++) {
+    flag = 0;
+    for (var j = 0; j < set2.length; j++) {
+      if (set1[i] === set2[j]) {
+        set2.splice(j, 1);
+        j--;
+        flag = 1;
+      }
+    }
+
+    if (flag == 0) {
+      distinctArr.push(set1[i]);
+    }
+  }
+  distinctArr.push(set2);
+  return distinctArr;
+}
+
+var set1 = [54, 71, 58, 95, 20];
+var set2 = [71, 51, 54, 33, 80];
+var distinctArr = [];
+
+console.log("distinct elements in the two arrays are:");
+console.log(distinct(set1, set2, distinctArr).flat());
